@@ -35,6 +35,9 @@ public class Persona implements Serializable {
 	private String rol;
 
 	private String telefono;
+	
+	private String estado;
+	
 
 
 	public Persona() {
@@ -111,13 +114,24 @@ public class Persona implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
+	
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	@Override
 	public String toString() {
 		return "Persona [idPersona=" + idPersona + ", apellidos=" + apellidos + ", cedula=" + cedula + ", correo="
 				+ correo + ", direccion=" + direccion + ", nombres=" + nombres + ", password=" + password + ", rol="
-				+ rol + ", telefono=" + telefono + "]";
+				+ rol + ", telefono=" + telefono + ", estado=" + estado + "]";
 	}
+ 
 
 
 	

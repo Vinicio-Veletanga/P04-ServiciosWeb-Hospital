@@ -59,7 +59,7 @@ public class CitaResource {
 	@PUT()
 	@Path("/actualizarEstado")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response actualizarcita(@FormParam("estado")String newEstadoCita, @FormParam("id") Integer id) {
+	public Response actualizarcita(@FormParam("estado") String newEstadoCita, @FormParam("id") Integer id) {
 		 Cita cita = citaFacade.find(id);
 		 	 
 		 try {

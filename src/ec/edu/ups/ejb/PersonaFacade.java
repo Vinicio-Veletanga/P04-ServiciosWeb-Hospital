@@ -61,5 +61,41 @@ public class PersonaFacade extends AbstractFacade<Persona> {
 		return personas;
 	}
 		
+	
+
+	public List<Persona> getPersonabyCedula(String cedula) {
+		String query = "SELECT *\r\n" + 
+				"FROM public.\"Persona\" where cedula ='"+cedula+"';";
+		List<Persona> personas = new ArrayList<Persona>();
+	
+		try {
+			personas = entityManager.createNativeQuery(query).getResultList();
+			System.out.println("Personas por cedula------->:" + personas);
+			
+		} catch (Exception e) {
+			System.out.println("--> ERROR Persona.getPersonabyEspecialidad" + e.getMessage());
+		}
+				
+		return personas;
+	}
+	
+	public List<Persona> getPersonaE(String cedula,String estado) {
+		String query = "" + 
+				"UPDATE public.\"Persona\"\r\n" + 
+				"SET estado='"+estado+"' where cedula ='"+cedula+"';" + 
+				"" + 
+				"";
+		List<Persona> personas = new ArrayList<Persona>();
+	
+		try {
+			personas = entityManager.createNativeQuery(query).getResultList();
+			System.out.println("Personas------->:" + personas);
+			
+		} catch (Exception e) {
+			System.out.println("--> ERROR Persona.getPersonabyEspecialidad" + e.getMessage());
+		}
+				
+		return personas;
+	}
 
 }
